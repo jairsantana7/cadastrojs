@@ -19,6 +19,7 @@ class NegociacaoController {
 
     this._listaNegociacoes.adiciona(this._criaNegociacao());
     this._limpaFormulario();
+
     console.log(this._listaNegociacoes.mostraNegociacoes);
 
     //let tste = [1, 2, 3, 4, 5, 6];

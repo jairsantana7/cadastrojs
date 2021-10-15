@@ -7,6 +7,6 @@ class ListaNegociacoes {
   }
 
   get mostraNegociacoes() {
-    return this._negociacoes;
+    return [].concat(this._negociacoes);
   }
 }
