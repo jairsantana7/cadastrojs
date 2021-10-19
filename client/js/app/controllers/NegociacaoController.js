@@ -45,4 +45,17 @@ class NegociacaoController {
     this._inputValor.value = 0.0;
     this._inputData.focus();
   }
+
+  importaNegociacoes() {
+    let service = new NegociacaoServices();
+    // na funação de retorno cchamada callback, a primeiro é o error e a segunda o resultao (err, result)
+    service.obterNegociacoesSemana((err, negociacoes) => {
+      if (err) {
+        this._mensagem.texto = err;
+        return;
+      }
+      negociacoes.forEach(negocio => this._listaNegociacoes.adiciona(negocio));
+      this._mensagem.texto = `Negociações importadas com sucesso`;
+    });
+  }
 }
